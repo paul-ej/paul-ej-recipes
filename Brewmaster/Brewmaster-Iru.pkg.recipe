@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Optional IOTA handoff for continuously enforced Brewmaster updates outside Brewmaster package policy. Dry run is enabled until reviewed.</string>
+	<key>Identifier</key>
+	<string>com.github.paul-ej.pkg.Brewmaster-Iru</string>
+	<key>Input</key>
+	<dict>
+		<key>IRU_APP_NAME</key>
+		<string>Brewmaster</string>
+		<key>NAME</key>
+		<string>Brewmaster</string>
+		<key>dry_run</key>
+		<true/>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>2.3</string>
+	<key>ParentRecipe</key>
+	<string>com.github.paul-ej.pkg.Brewmaster</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>custom_app</key>
+				<dict>
+					<key>prod_name</key>
+					<string>%IRU_APP_NAME%</string>
+				</dict>
+				<key>enforcement_type</key>
+				<string>audit_enforce</string>
+			</dict>
+			<key>Processor</key>
+			<string>com.iru.iota/IOTA</string>
+		</dict>
+	</array>
+</dict>
+</plist>
